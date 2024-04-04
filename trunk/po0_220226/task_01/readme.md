@@ -2,7 +2,7 @@
 
 ## Классы и объекты в С++ ##
 
-## Вариант 6 ##
+## Вариант 11 ##
  
 
 ## Цель работы ##
@@ -11,15 +11,34 @@
 
 ### Блоки с кодом реализации конструкторов и деструктора ###
 ```c++
-Exam::Exam(const char *name, const int date, const int grade)
-	: _studentName(std::make_unique<std::string>(name)), _date(date), _grade(grade)
-{
-	std::cout << "The constructor with parameters is called " << this << std::endl;
+
+Person::Person() {
+	name = "";
+	age = 0;
+	sex = 0;
+
+	cout << "The object " << this << " was created using the default constructor!" << endl;
 }
 
-Exam::Exam()
+Person::Person(string name, int age, int sex) {
+	this->name = name;
+	this->age = age;
+	this->sex = sex;
+
+	cout << "The object " << this << " was created using a constructor with parameters!" << endl;
+}
+
+Person::Person(Person const& person) {
+	this->name = person.name;
+	this->age = person.age;
+	this->sex = person.sex;
+
+	cout << "The object " << this << " was created using the copy constructor!" << endl;
+}
+
+Person::~Person()
 {
-	std::cout << "A constructor without parameters is called " << this << std::endl;
+	cout << "Destructor was called by " << this << endl;
 }
 
 ```
@@ -29,25 +48,27 @@ Exam::Exam()
 #### Указатель на объект ####
 
 ```c++
-a->Print();
+
+Person* person4 = new Person();
+	person4->SetName(name);
+	person4->SetAge(age);
+	person4->SetSex(sex);
+	person4->Print();
+
 ```
 
-#### В переменной а содержится адрес объекта. Затем вызывается метод Print класса Exam. Метод выведет в консоль поля объекта а. ####
+#### В переменной person4 содержится адрес объекта. Затем вызывается метод SetName, SetAge, SetSex, Print класса Person. Методы SetName, SetAge, SetSex устанавливают значения полей name, age, sex, а метод Print выводит на консоль значения полей. ####
 
 #### Указатель на функцию ####
 
 ```c++
-void (Exam::*pf)() const = &Exam::Print;
 
-std::array<Exam, 3> firstGroup = {
-    Exam("Victor", 1, 10),
-    Exam("Vitaliy", 1, 10),
-    Exam("Dima", 1, 10)};
+void(Person:: * destroy)();
+destroy = &Person::Destroy;
 
-for (int i = 0; i < 3; i++)
-{
-    (firstGroup[i].*pf)();
-}
+Person person3;
+(person3.*destroy)();
+
 ```
 
-#### Адрес функции print записывается в указатель на функцию. Затем каждый элемент массива разыменовывает указатель и вызывает функцию Print ####
+#### Адрес функции Destroy записывается в указатель на функцию. Затем объект person3 разыменовывает адрес функции Destroy и вызывает её. ####

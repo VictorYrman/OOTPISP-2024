@@ -16,5 +16,5 @@
 | 8   | [Филиппович Милана Сергеевна](https://github.com/miilanafil)| | | | | | | |8|0|
 | 9   | [Хведорец Виктор Сергеевич](https://github.com/ViktorKhvedorets)| | | | | | | |9|0|
 | 10  | [Хлебус Игнат Витальевич](https://github.com/ignat121235)| | | | | | | | | |
-| 11  | [Юрашевич Виктор Сергеевич](https://github.com/VictorYrman)| | | | | | | |10|0|
+| 11  | [Юрашевич Виктор Сергеевич](https://github.com/VictorYrman)| [PO-11-220226](./trunk/po0_220226/) | ✅ | | | | | |10|4|
 | 12  | [Янущик Дмитрий Дмитриевич](https://github.com/DimaYanuschik)| | | | | | | |9|0|
