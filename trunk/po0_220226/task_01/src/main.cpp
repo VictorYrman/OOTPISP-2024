@@ -26,9 +26,6 @@ int main()
 	std::vector <Person*> persons;
 	persons.push_back(&person1);
 
-	Person person2(person1);
-	persons.push_back(&person2);
-
 	Person person3;
 	persons.push_back(&person3);
 
