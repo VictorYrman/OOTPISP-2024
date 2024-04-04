@@ -1,7 +1,6 @@
 ﻿#include <iostream>
 #include "Person.h"
 #include <vector>
-#include <Windows.h>
 
 using namespace std;
 
