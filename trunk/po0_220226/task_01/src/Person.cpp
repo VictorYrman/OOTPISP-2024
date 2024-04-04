@@ -57,8 +57,3 @@ void Person::Print() const {
 	else
 		std::cout << "You aren't a person!" << std::endl;
 }
-
-Person::~Person()
-{
-	std::cout << "Destructor was called by " << this << std::endl;
-}
