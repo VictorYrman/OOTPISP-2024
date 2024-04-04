@@ -14,7 +14,6 @@ public:
 	Person(const std::string& name, const int age, const int sex);
 	Person(Person const& person) = delete;
 	Person& operator = (const Person&) = delete;
-	~Person();
 	void SetName(const std::string& name);
 	void SetAge(const int age);
 	void SetSex(const int sex);

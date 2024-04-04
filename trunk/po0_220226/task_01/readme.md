@@ -12,33 +12,17 @@
 ### Блоки с кодом реализации конструкторов и деструктора ###
 ```c++
 
-Person::Person() {
-	name = "";
-	age = 0;
-	sex = 0;
+Person::Person() 
+{
 
 	cout << "The object " << this << " was created using the default constructor!" << endl;
 }
 
-Person::Person(string name, int age, int sex) {
-	this->name = name;
-	this->age = age;
-	this->sex = sex;
+Person::Person(const std::string& name, const i{nt age, const int sex)
+	: mname(name), mage(age), msex(sex)
+{
 
 	cout << "The object " << this << " was created using a constructor with parameters!" << endl;
-}
-
-Person::Person(Person const& person) {
-	this->name = person.name;
-	this->age = person.age;
-	this->sex = person.sex;
-
-	cout << "The object " << this << " was created using the copy constructor!" << endl;
-}
-
-Person::~Person()
-{
-	cout << "Destructor was called by " << this << endl;
 }
 
 ```
@@ -49,7 +33,7 @@ Person::~Person()
 
 ```c++
 
-Person* person4 = new Person();
+auto person4 = std::make_unique<Person>();
 	person4->SetName(name);
 	person4->SetAge(age);
 	person4->SetSex(sex);
@@ -63,11 +47,11 @@ Person* person4 = new Person();
 
 ```c++
 
-void(Person:: * destroy)();
-destroy = &Person::Destroy;
+void(Person:: * print)() const;
+destroy = &Person::Print;
 
 Person person3;
-(person3.*destroy)();
+(person3.*print)();
 
 ```
 
