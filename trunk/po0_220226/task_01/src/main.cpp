@@ -20,7 +20,7 @@ int main()
 	Person person1(name, age, sex);
 	person1.Print();
 
-	void(Person:: * print)();
+	void(Person:: * print)() const;
 	print = &Person::Print;
 
 	std::vector <Person*> persons;

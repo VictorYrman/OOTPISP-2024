@@ -52,7 +52,7 @@ int Person::GetSex() const {
 		return this->msex;
 }
 
-void Person::Print() {
+void Person::Print() const {
 	std::cout << "Name: " << this->GetName() << std::endl;
 	std::cout << "Age: " << this->GetAge() << std::endl;
 

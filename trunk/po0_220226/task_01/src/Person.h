@@ -20,7 +20,7 @@ public:
 	std::string GetName() const;
 	int GetAge() const;
 	int GetSex() const;
-	void Print();
+	void Print() const;
 };
 
 #endif
