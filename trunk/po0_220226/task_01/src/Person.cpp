@@ -13,12 +13,6 @@ Person::Person(const std::string& name, const int age, const int sex)
 	std::cout << "The object " << this << " was created using a constructor with parameters!" << std::endl;
 }
 
-Person::Person(Person const& person)
-: mname(person.mname), mage(person.mage), msex(person.msex){
-
-	std::cout << "The object " << this << " was created using the copy constructor!" << std::endl;
-}
-
 void Person::SetName(const std::string& name) {
 	this->mname = name;
 }
