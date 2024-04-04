@@ -1,30 +1,29 @@
 ﻿#include <iostream>
 #include "Person.h"
 #include <vector>
-
-using namespace std;
+#include <memory>
 
 int main()
 {
-	string name;
-	cout << "Enter your name: ";
-	cin >> name;
+	std::string name;
+	std::cout << "Enter your name: ";
+	std::cin >> name;
 
 	int age;
-	cout << "Enter your age: ";
-	cin >> age;
+	std::cout << "Enter your age: ";
+	std::cin >> age;
 
 	int sex;
-	cout << "Enter your sex (1 - male, 2 - female): ";
-	cin >> sex;
+	std::cout << "Enter your sex (1 - male, 2 - female): ";
+	std::cin >> sex;
 
 	Person person1(name, age, sex);
 	person1.Print();
 
-	void(Person:: * destroy)();
-	destroy = &Person::Destroy;
+	void(Person:: * print)();
+	print = &Person::Print;
 
-	vector <Person*> persons;
+	std::vector <Person*> persons;
 	persons.push_back(&person1);
 
 	Person person2(person1);
@@ -33,11 +32,11 @@ int main()
 	Person person3;
 	persons.push_back(&person3);
 
-	(person3.*destroy)();
+	(person3.*print)();
 
 	persons[1]->Print();
 
-	Person* person4 = new Person();
+	auto person4 = std::make_unique<Person>();
 	person4->SetName(name);
 	person4->SetAge(age);
 	person4->SetSex(sex);

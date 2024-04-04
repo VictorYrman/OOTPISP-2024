@@ -3,27 +3,24 @@
 
 #include <string>
 
-using namespace std;
-
 class Person {
 private:
-	string name;
-	int age;
-	int sex;
+	std::string mname = "";
+	int mage = 0;
+	int msex = 0;
 
 public:
 	Person();
-	Person(string name, int age, int sex);
+	Person(const std::string& name, const int age, const int sex);
 	Person(Person const& person);
 	~Person();
-	void SetName(string name);
-	void SetAge(int age);
-	void SetSex(int sex);
-	string GetName();
-	int GetAge();
-	int GetSex();
+	void SetName(const std::string& name);
+	void SetAge(const int age);
+	void SetSex(const int sex);
+	std::string GetName() const;
+	int GetAge() const;
+	int GetSex() const;
 	void Print();
-	void Destroy();
 };
 
 #endif

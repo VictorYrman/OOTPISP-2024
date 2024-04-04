@@ -1,82 +1,70 @@
 #include "Person.h"
 #include <iostream>
 
-using namespace std;
 
-Person::Person() {
-	name = "";
-	age = 0;
-	sex = 0;
-
-	cout << "The object " << this << " was created using the default constructor!" << endl;
+Person::Person() 
+{
+	std::cout << "The object " << this << " was created using the default constructor!" << std::endl;
 }
 
-Person::Person(string name, int age, int sex) {
-	this->name = name;
-	this->age = age;
-	this->sex = sex;
+Person::Person(const std::string& name, const int age, const int sex)
+: mname(name), mage(age), msex(sex){
 
-	cout << "The object " << this << " was created using a constructor with parameters!" << endl;
+	std::cout << "The object " << this << " was created using a constructor with parameters!" << std::endl;
 }
 
-Person::Person(Person const& person) {
-	this->name = person.name;
-	this->age = person.age;
-	this->sex = person.sex;
+Person::Person(Person const& person)
+: mname(person.mname), mage(person.mage), msex(person.msex){
 
-	cout << "The object " << this << " was created using the copy constructor!" << endl;
+	std::cout << "The object " << this << " was created using the copy constructor!" << std::endl;
 }
 
-void Person::SetName(string name) {
-	this->name = name;
+void Person::SetName(const std::string& name) {
+	this->mname = name;
 }
 
-void Person::SetAge(int age) {
-	this->age = age;
+void Person::SetAge(const int age) {
+	this->mage = age;
 }
 
-void Person::SetSex(int sex) {
-	this->sex = sex;
+void Person::SetSex(const int sex) {
+	this->msex = sex;
 }
 
-string Person::GetName() {
-	if (this->name == "")
+std::string Person::GetName() const {
+	if (this->mname == "")
 		return "Null Value";
 	else
-		return this->name;
+		return this->mname;
 }
 
-int Person::GetAge() {
-	if (this->age == 0)
+int Person::GetAge() const {
+	if (this->mage == 0)
 		return -1;
 	else
-		return this->age;
+		return this->mage;
 }
 
-int Person::GetSex() {
-	if (this->sex == 0)
+int Person::GetSex() const {
+	if (this->msex == 0)
 		return -1;
 	else
-		return this->sex;
-}
-
-void Person::Destroy() {
-	this->~Person();
+		return this->msex;
 }
 
 void Person::Print() {
-	cout << "Name: " << this->GetName() << endl;
-	cout << "Age: " << this->GetAge() << endl;
+	std::cout << "Name: " << this->GetName() << std::endl;
+	std::cout << "Age: " << this->GetAge() << std::endl;
 
 	if (this->GetSex() == 1)
-		cout << "Sex: Male" << endl;
+		std::cout << "Sex: Male" << std::endl;
 	else if (this->GetSex() == 2)
-		cout << "Sex: Female" << endl;
+		std::cout << "Sex: Female" << std::endl;
 	else
-		cout << "You aren't a person!" << endl;
+		std::cout << "You aren't a person!" << std::endl;
 }
 
 Person::~Person()
 {
-	cout << "Destructor was called by " << this << endl;
+	std::cout << "Destructor was called by " << this << std::endl;
 }
