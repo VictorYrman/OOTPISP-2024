@@ -38,8 +38,5 @@ int main()
 	person4->SetAge(age);
 	person4->SetSex(sex);
 	person4->Print();
-
-
-	system("pause");
 }
 
