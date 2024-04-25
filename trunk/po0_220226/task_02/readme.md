@@ -43,6 +43,7 @@ void Transport_Vehicle::Add() {
     last = this;
     last->SetNext(nullptr);
 }
+
 ```
 
 ### Статические компоненты класса ###
@@ -50,7 +51,8 @@ void Transport_Vehicle::Add() {
 ```c++
 
     static Transport_Vehicle* begin;
-  static Transport_Vehicle* last;
+	static Transport_Vehicle* last;
+
 ```
 
 ### Реализация метода для просмотра списка ###
@@ -65,6 +67,7 @@ void Transport_Vehicle::Print() {
         ptr = ptr->next;
     }
 }
+
 ```
 
 ### Реализация метода для добавления объекта в список ###
@@ -82,6 +85,7 @@ void Transport_Vehicle::Add() {
     last = this;
     last->SetNext(nullptr);
 }
+
 ```
 
 #### Если функции не будут виртуальными, то программа не скомпилируется ####
