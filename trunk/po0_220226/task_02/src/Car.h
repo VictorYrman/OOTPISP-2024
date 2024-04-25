@@ -11,7 +11,7 @@ private:
 public:
     Car() = default;
     Car(const std::string& mark, const int maxSpeed);
-    virtual ~Car() = default;
+    override ~Car() = default;
     void Show() const override;
     void SetMark(const std::string& mark);
     std::string GetMark() const;
