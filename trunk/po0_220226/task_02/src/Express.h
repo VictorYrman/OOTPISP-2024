@@ -8,7 +8,6 @@ private:
 public:
     Express() = default;
     Express(const int countPlaces, const int countCarriages, const int maxSpeed);
-    ~Express() = default override;
     void Show() const override;
     void SetCountPlaces(const int countPlaces);
     int GetCountPlaces() const;

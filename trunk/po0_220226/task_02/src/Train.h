@@ -11,7 +11,6 @@ private:
 public:
     Train() = default;
     Train(const int countCarriages, const int maxSpeed);
-    ~Train() = default override;
     void Show() const override;
     void SetCountCarriages(const int countCarriages);
     int GetCountCarriages() const;
