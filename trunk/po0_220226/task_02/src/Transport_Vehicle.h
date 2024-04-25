@@ -13,8 +13,8 @@ protected:
 	static Transport_Vehicle* last;
 public:
 	Transport_Vehicle() = default;
-	Transport_Vehicle(const int maxSpeed);
-	~Transport_Vehicle() = default;
+	explicit Transport_Vehicle(const int maxSpeed);
+	virtual ~Transport_Vehicle() = default;
 	void Add();
 	void SetNext(Transport_Vehicle* nextTransport);
 	virtual void Show() const;
