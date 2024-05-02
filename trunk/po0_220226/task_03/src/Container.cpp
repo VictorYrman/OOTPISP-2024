@@ -17,7 +17,7 @@ void Container::ShowAll() const {
 }
 
 void Container::Add(Geometry* _geometry) {
-	auto _new = make_unqiue<ContainerUnit>(_geometry);
+	auto _new = std::make_unqiue<ContainerUnit>(_geometry);
 
 	if (begin == nullptr) {
 		begin = _new.get();
@@ -42,7 +42,7 @@ Geometry* Container::operator[](const int index) {
 	try
 	{
 		if (index < 0 || index >= _size)
-			throw "Your index is out of range\nReturn empty element";
+			throw std::string{ "Your index is out of range\nReturn empty element" };
 
 		ContainerUnit* ptr = begin;
 
@@ -52,10 +52,9 @@ Geometry* Container::operator[](const int index) {
 
 		return ptr->geometry;
 	}
-	catch (const char* error_message)
+	catch (const std::string& error_message)
 	{
 		std::cout << error_message << std::endl;
-		Geometry geometry;
-		return &geometry;
+		return nullptr;
 	}
 }
