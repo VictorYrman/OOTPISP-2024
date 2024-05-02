@@ -17,7 +17,7 @@ void Container::ShowAll() const {
 }
 
 void Container::Add(Geometry* _geometry) {
-	auto _new = std::make_unqiue<ContainerUnit>(_geometry);
+	auto _new = std::make_unique<ContainerUnit>(_geometry);
 
 	if (begin == nullptr) {
 		begin = _new.get();
