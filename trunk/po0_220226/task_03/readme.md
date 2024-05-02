@@ -117,3 +117,4 @@ bool Cone::operator!=(const Cone right) const {
 	return !(*this == right);
 }
 ```
+
