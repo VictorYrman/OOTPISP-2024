@@ -11,7 +11,7 @@ private:
 public:
 	Geometry() = default;
 	Geometry(const float _volume, const float _area);
-	~Geometry() = default;
+	virtual ~Geometry() = default;
 
 	void SetVolume(const float _volume);
 	float GetVolume() const;
@@ -22,9 +22,7 @@ public:
 	virtual void CountArea();
 	virtual void Print() const;
 
-	void operator=(const Geometry right);
-	bool operator==(const Geometry right) const;
-	bool operator!=(const Geometry right) const;
+	bool operator==(const Geometry& right) const;
 };
 
 #endif

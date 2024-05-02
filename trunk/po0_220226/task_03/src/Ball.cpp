@@ -3,8 +3,7 @@
 #include <cmath>
 
 Ball::Ball(const float _radius) : radius(_radius) {
-	CountVolume();
-	CountArea();
+	
 }
 
 void Ball::SetRadius(const float _radius) {
@@ -31,19 +30,10 @@ void Ball::Print() const {
 	Geometry::Print();
 }
 
-void Ball::operator=(const Ball right) {
-	this->radius = right.radius;
-	this->SetVolume(right.GetVolume());
-	this->SetArea(right.GetArea());
-}
 
-bool Ball::operator==(const Ball right) const {
+bool Ball::operator==(const Ball& right) const {
 	if (this->radius == right.radius)
 		return true;
 	else
 		return false;
-}
-
-bool Ball::operator!=(const Ball right) const {
-	return !(*this == right);
 }

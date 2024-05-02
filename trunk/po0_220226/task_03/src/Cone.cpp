@@ -3,8 +3,7 @@
 #include <cmath>
 
 Cone::Cone(const float _radius, const float _height) : radius(_radius), height(_height) {
-	CountVolume();
-	CountArea();
+	
 }
 
 void Cone::SetRadius(const float _radius) {
@@ -18,7 +17,7 @@ float Cone::GetRadius() const {
 }
 
 void Cone::SetHeight(const float _height) {
-	height == _height;
+	height = _height;
 	CountVolume();
 	CountArea();
 }
@@ -42,20 +41,9 @@ void Cone::Print() const {
 	Geometry::Print();
 }
 
-void Cone::operator=(const Cone right) {
-	this->radius = right.radius;
-	this->height = right.height;
-	this->SetVolume(right.GetVolume());
-	this->SetArea(right.GetArea());
-}
-
-bool Cone::operator==(const Cone right) const {
+bool Cone::operator==(const Cone& right) const {
 	if (this->radius == right.radius && this->height == right.height)
 		return true;
 	else
 		return false;
-}
-
-bool Cone::operator!=(const Cone right) const {
-	return !(*this == right);
 }

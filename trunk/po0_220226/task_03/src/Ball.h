@@ -11,8 +11,9 @@ private:
 
 public:
     Ball() = default;
-    Ball(const float _radius);
-    ~Ball() = default;
+    explicit Ball(const float _radius);
+    Ball(const Ball& old) = delete;
+    ~Ball() override = default;
 
     void SetRadius(const float _radius);
     float GetRadius() const;
@@ -20,9 +21,7 @@ public:
     void CountArea() override;
     void Print() const override;
 
-    void operator=(const Ball right);
-    bool operator==(const Ball right) const;
-    bool operator!=(const Ball right) const;
+    bool operator==(const Ball& right) const;
 };
 
 #endif

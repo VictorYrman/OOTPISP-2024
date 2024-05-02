@@ -3,8 +3,7 @@
 #include <cmath>
 
 Pyramid::Pyramid(const float _baseArea, const float _height) : baseArea(_baseArea), height(_height) {
-	CountVolume();
-	CountArea();
+	
 }
 
 void Pyramid::SetBaseArea(const float _baseArea) {
@@ -42,20 +41,9 @@ void Pyramid::Print() const {
 	Geometry::Print();
 }
 
-void Pyramid::operator=(const Pyramid right) {
-	this->baseArea = right.baseArea;
-	this->height = right.height;
-	this->SetVolume(right.GetVolume());
-	this->SetArea(right.GetArea());
-}
-
-bool Pyramid::operator==(const Pyramid right) const {
+bool Pyramid::operator==(const Pyramid& right) const {
 	if (this->baseArea == right.baseArea && this->height == right.height)
 		return true;
 	else
 		return false;
-}
-
-bool Pyramid::operator!=(const Pyramid right) const {
-	return !(*this == right);
 }

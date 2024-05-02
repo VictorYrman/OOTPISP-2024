@@ -13,7 +13,8 @@ private:
 public:
     Pyramid() = default;
     Pyramid(const float _baseArea, const float _height);
-    ~Pyramid() = default;
+    Pyramid(const Pyramid& old) = delete;
+    ~Pyramid() override = default;
 
     void SetBaseArea(const float _baseArea);
     float GetBaseArea() const;
@@ -24,9 +25,7 @@ public:
     void CountArea() override;
     void Print() const override;
 
-    void operator=(const Pyramid right);
-    bool operator==(const Pyramid right) const;
-    bool operator!=(const Pyramid right) const;
+    bool operator==(const Pyramid& right) const;
 };
 
 #endif

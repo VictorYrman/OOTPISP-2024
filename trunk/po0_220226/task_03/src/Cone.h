@@ -13,7 +13,8 @@ private:
 public:
     Cone() = default;
     Cone(const float _radius, const float _height);
-    ~Cone() = default;
+    Cone(const Cone& old) = delete;
+    ~Cone() override = default;
 
     void SetRadius(const float _radius);
     float GetRadius() const;
@@ -24,9 +25,7 @@ public:
     void CountArea() override;
     void Print() const override;
 
-    void operator=(const Cone right);
-    bool operator==(const Cone right) const;
-    bool operator!=(const Cone right) const;
+    bool operator==(const Cone& right) const;
 };
 
 #endif

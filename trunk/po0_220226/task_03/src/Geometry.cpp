@@ -20,11 +20,11 @@ float Geometry::GetArea() const {
 }
 
 void Geometry::CountVolume() {
-
+	std::cout << "Hello";
 }
 
 void Geometry::CountArea() {
-
+	std::cout << "GoodBye";
 }
 
 void Geometry::Print() const {
@@ -32,18 +32,9 @@ void Geometry::Print() const {
 	std::cout << "Area: " << area << std::endl;
 }
 
-void Geometry::operator=(const Geometry right) {
-	this->volume = right.volume;
-	this->area = right.area;
-}
-
-bool Geometry::operator==(const Geometry right) const {
+bool Geometry::operator==(const Geometry& right) const {
 	if (this->volume == right.volume && this->area == right.area)
 		return true;
 	else 
 		return false;
-}
-
-bool Geometry::operator!=(const Geometry right) const {
-	return !(*this == right);
 }

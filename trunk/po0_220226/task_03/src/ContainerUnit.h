@@ -6,9 +6,9 @@
 class ContainerUnit
 {
 public:
-	ContainerUnit(Geometry* _geometry) : geometry(_geometry), next(nullptr) {}
-	ContainerUnit* next;
+	explicit ContainerUnit(Geometry* _geometry) : geometry(_geometry) {}
 	Geometry* geometry;
+	ContainerUnit* next = nullptr;
 };
 
 #endif
