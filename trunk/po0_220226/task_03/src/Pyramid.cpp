@@ -1,5 +1,6 @@
 #include "Pyramid.h"
 #include <iostream>
+#include <cmath>
 
 Pyramid::Pyramid(const float _baseArea, const float _height) : baseArea(_baseArea), height(_height) {
 	CountVolume();
@@ -27,11 +28,11 @@ float Pyramid::GetHeight() const {
 }
 
 void Pyramid::CountVolume() {
-	SetVolume((1.0 / 3.0) * GetBaseArea() * GetHeight());
+	SetVolume(float((1.0 / 3.0) * GetBaseArea() * GetHeight()));
 }
 
 void Pyramid::CountArea() {
-	SetArea(GetBaseArea() + (4.0 * (0.5 * (sqrt(GetBaseArea()))) * sqrt(GetHeight() * GetHeight() + (0.5 * (sqrt(GetBaseArea()))) * (0.5 * (sqrt(GetBaseArea()))))));
+	SetArea(float(GetBaseArea() + (4.0 * (0.5 * (sqrt(GetBaseArea()))) * sqrt(GetHeight() * GetHeight() + (0.5 * (sqrt(GetBaseArea()))) * (0.5 * (sqrt(GetBaseArea())))))));
 }
 
 void Pyramid::Print() const {

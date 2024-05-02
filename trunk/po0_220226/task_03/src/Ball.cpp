@@ -1,5 +1,6 @@
 #include "Ball.h"
 #include <iostream>
+#include <cmath>
 
 Ball::Ball(const float _radius) : radius(_radius) {
 	CountVolume();
@@ -17,11 +18,11 @@ float Ball::GetRadius() const {
 }
 
 void Ball::CountVolume() {
-	SetVolume((4.0 / 3.0) * 3.14 * (pow(GetRadius(), 3)));
+	SetVolume(float((4.0 / 3.0) * std::numbers::pi * (pow(GetRadius(), 3))));
 }
 
 void Ball::CountArea() {
-	SetArea(4.0 * 3.14 * (pow(GetRadius(), 2)));
+	SetArea(float(4.0 * std::numbers::pi * (pow(GetRadius(), 2))));
 }
 
 void Ball::Print() const {
