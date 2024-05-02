@@ -27,7 +27,6 @@ int main()
 
 	Ball ball1(5.0);
 	Ball ball2;
-	ball2 = ball1;
 
 	if (ball1 == ball2)
 	{
@@ -37,6 +36,8 @@ int main()
 	{
 		std::cout << "Balls are different" << std::endl;
 	}
+
+	ball2 = ball1;
 
 	arr.Add(&ball1);
 	arr.Add(&ball2);
@@ -60,6 +61,4 @@ int main()
 	arr.ShowAll();
 
 	arr[7]->GetArea();
-
-	system("pause");
 }

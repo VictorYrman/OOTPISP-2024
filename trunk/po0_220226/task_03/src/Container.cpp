@@ -5,6 +5,7 @@
 #include "Ball.h"
 #include "Pyramid.h"
 #include <iostream>
+#include <memory>
 
 void Container::ShowAll() const {
 	ContainerUnit* ptr = begin;
@@ -16,7 +17,7 @@ void Container::ShowAll() const {
 }
 
 void Container::Add(Geometry* _geometry) {
-	auto _new = std::make_unique<ContainerUnit>(_geometry);
+	auto _new = make_unqiue<ContainerUnit>(_geometry);
 
 	if (begin == nullptr) {
 		begin = _new.get();
