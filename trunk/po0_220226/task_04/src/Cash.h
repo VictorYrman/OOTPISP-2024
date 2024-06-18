@@ -12,7 +12,18 @@ public:
 
     Cash& operator=(const Cash& a) = default;
     bool operator==(const Cash& a) const;
-    Cash operator+(const Cash& other) const;
+
+    friend Cash Cash::operator+(const Cash& other) const
+    {
+        int64_t resultRubles = rubles + other.rubles;
+        int32_t resultCopecks = copecks + other.copecks;
+        if (resultCopecks >= 100)
+        {
+            resultRubles += resultCopecks / 100;
+            resultCopecks = resultCopecks % 100;
+        }
+        return Cash(static_cast<double>(resultRubles) + static_cast<double>(resultCopecks) / 100.0);
+    }
 
     friend std::ostream& operator<<(std::ostream& out, const Cash& a)
     {
