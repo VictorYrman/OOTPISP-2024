@@ -30,7 +30,14 @@ public:
 
     bool Contains(const T& element) const
     {
-        return std::ranges::any_of(elements, [&](const auto& e) { return e == element; });
+        for (const auto& e : elements)
+        {
+            if (e == element)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     size_t Size() const
