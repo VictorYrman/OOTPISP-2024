@@ -12,7 +12,7 @@ public:
 
     Cash& operator=(const Cash& a) = default;
     bool operator==(const Cash& a) const;
-    Cash operator+(const Cash& other) const;
+    friend Cash operator+(const Cash& other) const;
 
     friend std::ostream& operator<<(std::ostream& out, const Cash& a);
     friend std::istream& operator>>(std::istream& in, Cash& a);

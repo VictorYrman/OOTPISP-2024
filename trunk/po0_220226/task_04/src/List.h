@@ -30,14 +30,7 @@ public:
 
     bool Contains(const T& element) const
     {
-        for (const auto& e : elements)
-        {
-            if (e == element)
-            {
-                return true;
-            }
-        }
-        return false;
+        return std::ranges::any_of(elements, [&](const auto& e) { return e == element; });
     }
 
     size_t Size() const
@@ -60,7 +53,7 @@ public:
         return static_cast<int>(Size());
     }
 
-    List<T> operator+(const List<T>& other) const
+    friend List<T> operator+(const List<T>& other) const
     {
         List<T> result;
         size_t maxSize = std::max(this->Size(), other.Size());
