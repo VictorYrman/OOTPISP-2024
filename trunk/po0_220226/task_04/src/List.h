@@ -54,7 +54,7 @@ public:
         return static_cast<int>(Size());
     }
 
-    friend List<T> operator+(const List<T>& other) const
+    friend List<T> operator+(const List<T>& other)
     {
         List<T> result;
         size_t maxSize = std::max(this->Size(), other.Size());
