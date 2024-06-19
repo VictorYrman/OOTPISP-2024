@@ -13,8 +13,22 @@ public:
 	MyMoney &operator=(const MyMoney &a) = default;
 	bool operator==(const MyMoney &a) const;
 	auto operator<=>(const MyMoney &a) const = default;
-	friend MyMoney operator+(const MyMoney& a, const MyMoney& b);
-	friend MyMoney operator/(const MyMoney& a, double val);
+
+	friend MyMoney operator+(const MyMoney& a, const MyMoney& b)
+	{
+		MyMoney result;
+		result.SetDollars(a.GetDollars() + b.GetDollars());
+		result.SetCents(a.GetCents() + b.GetCents());
+		return result;
+	}
+
+	friend MyMoney operator/(const MyMoney& a, double val)
+	{
+		MyMoney result;
+		result.SetDollars(a.GetDollars() / val);
+		result.SetCents(static_cast<int32_t>(a.GetCents() / val));
+		return result;
+	}
 
 	friend std::ostream &operator<<(std::ostream &out, const MyMoney &a)
 	{
@@ -41,19 +55,3 @@ private:
 	int64_t dollars_ = 0;
 	int32_t cents_ = 0;
 };
-
-MyMoney operator+(const MyMoney& a, const MyMoney& b)
-{
-	MyMoney result;
-	result.SetDollars(a.GetDollars() + b.GetDollars());
-	result.SetCents(a.GetCents() + b.GetCents());
-	return result;
-}
-
-MyMoney operator/(const MyMoney& a, double val)
-{
-	MyMoney result;
-	result.SetDollars(a.GetDollars() / val);
-	result.SetCents(static_cast<int32_t>(a.GetCents() / val));
-	return result;
-}
