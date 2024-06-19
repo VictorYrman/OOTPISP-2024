@@ -55,7 +55,7 @@ void QList<T>::pop_front()
 {
     if (elements.empty())
     {
-        throw std::logic_error("List is empty");
+        return;
     }
     elements.pop();
 }
@@ -74,14 +74,14 @@ void QList<T>::findAverageAndAddToFront()
 {
     if (elements.empty())
     {
-        throw std::logic_error("List is empty, cannot calculate average");
+        return;
     }
 
     // Calculate average
     if (elements.empty())
         return;
 
-    int size = elements.size();
+    int size = static_cast<int>(elements.size());
     T sum = T();
     std::queue<T> temp = elements;
 
@@ -91,7 +91,7 @@ void QList<T>::findAverageAndAddToFront()
         temp.pop();
     }
 
-    T average = sum / static_cast<double>(size);
+    T average = sum / static_cast<float>(size);
 
     // Add average to front
     elements.push(average);
@@ -129,7 +129,7 @@ void QList<T>::subtractMinFromAll()
 {
     if (elements.empty())
     {
-        throw std::logic_error("List is empty, cannot subtract minimum");
+        return;
     }
 
     T minElement = elements.front();

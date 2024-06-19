@@ -11,8 +11,8 @@ private:
     struct Node
     {
         T data;
-        std::unique_ptr<Node> next;
-        Node(const T &value) : data(value), next(nullptr) {}
+        std::unique_ptr<Node> next = nullptr;
+        explicit Node(const T &value) : data(value) {}
     };
 
     std::unique_ptr<Node> head = nullptr;
