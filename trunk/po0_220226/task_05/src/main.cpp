@@ -39,7 +39,7 @@ void q_push_average_to_begin(std::queue<T> &q)
     if (q.empty())
         return;
 
-    int size = static_cast<int>(q.size());
+    auto size = static_cast<int>(q.size());
     T sum = T();
     std::queue<T> temp = q;
 

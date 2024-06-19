@@ -2,7 +2,7 @@
 
 MyMoney::MyMoney(double amount)
     : dollars_(static_cast<int64_t>(amount)),
-      cents_(static_cast<int32_t>((amount - static_cast<double>(amount)) * 100))
+      cents_(static_cast<int32_t>((amount - amount) * 100))
 {
 }
 

@@ -81,7 +81,7 @@ void QList<T>::findAverageAndAddToFront()
     if (elements.empty())
         return;
 
-    int size = static_cast<int>(elements.size());
+    auto size = static_cast<int>(elements.size());
     T sum = T();
     std::queue<T> temp = elements;
 
