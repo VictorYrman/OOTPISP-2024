@@ -1,3 +1,4 @@
+
 # Лабораторная работ №4 #
 
 ## Шаблоны классов ##
@@ -95,3 +96,9 @@ const T& operator[](const size_t index) const
         return elements[index];
     }
 ```
+
+
+
+
+
+
