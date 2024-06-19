@@ -25,7 +25,7 @@ public:
 	friend MyMoney operator/(const MyMoney& a, double val)
 	{
 		MyMoney result;
-		result.SetDollars(static_cast<double>(a.GetDollars() / val));
+		result.SetDollars(static_cast<int64_t>(a.GetDollars() / val));
 		result.SetCents(static_cast<int32_t>(a.GetCents() / val));
 		return result;
 	}
