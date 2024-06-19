@@ -55,19 +55,19 @@ public:
         return static_cast<int>(Size());
     }
 
-    friend List<T> operator+(const List<T>& other)
+    friend List<T> operator+(const List<T>& other, const List<T>& other2)
     {
         List<T> result;
-        size_t maxSize = std::max(this->Size(), other.Size());
+        size_t maxSize = std::max(other2.Size(), other.Size());
         for (size_t i = 0; i < maxSize; i++)
         {
-            if (i < this->Size() && i < other.Size())
+            if (i < other2.Size() && i < other.Size())
             {
-                result.Add(this->elements[i] + other.elements[i]);
+                result.Add(other2.elements[i] + other.elements[i]);
             }
-            else if (i < this->Size())
+            else if (i < other2.Size())
             {
-                result.Add(this->elements[i] + static_cast<T>(0));
+                result.Add(other2.elements[i] + static_cast<T>(0));
             }
             else
             {

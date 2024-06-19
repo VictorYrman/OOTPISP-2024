@@ -13,10 +13,10 @@ public:
     Cash& operator=(const Cash& a) = default;
     bool operator==(const Cash& a) const;
     
-    friend Cash operator+(const Cash& other)
+    friend Cash operator+(const Cash& other, const Cash& other2)
     {
-        int64_t resultRubles = rubles + other.rubles;
-        int32_t resultCopecks = copecks + other.copecks;
+        int64_t resultRubles = other2.rubles + other.rubles;
+        int32_t resultCopecks = other2.copecks + other.copecks;
         if (resultCopecks >= 100)
         {
             resultRubles += resultCopecks / 100;
