@@ -15,12 +15,12 @@ private:
         Node(const T &value) : data(value), next(nullptr) {}
     };
 
-    std::unique_ptr<Node> head;
-    Node *tail;
-    size_t size;
+    std::unique_ptr<Node> head = nullptr;
+    Node *tail = nullptr;
+    size_t size = 0;
 
 public:
-    List() : head(nullptr), tail(nullptr), size(0) {}
+    List() = default;
     ~List() = default;
     bool empty() const { return size == 0; }
 
@@ -59,7 +59,7 @@ public:
     {
         if (!head)
         {
-            throw std::logic_error("List is empty");
+            return;
         }
         head = std::move(head->next);
         if (!head)
@@ -81,7 +81,7 @@ public:
     {
         if (!head)
         {
-            throw std::logic_error("List is empty");
+            return;
         }
         return head->data;
     }
@@ -90,7 +90,7 @@ public:
     {
         if (!tail)
         {
-            throw std::logic_error("List is empty");
+            return;
         }
         return tail->data;
     }
@@ -99,7 +99,7 @@ public:
     {
         if (empty())
         {
-            throw std::logic_error("List is empty, cannot calculate average");
+            return;
         }
 
         T sum = 0;
@@ -110,7 +110,7 @@ public:
             current = current->next.get();
         }
 
-        T average = sum / size;
+        T average = sum / static_cast<double>(size);
         push_front(average);
     }
 
@@ -152,7 +152,7 @@ public:
     {
         if (empty())
         {
-            throw std::logic_error("List is empty, cannot subtract minimum");
+            return;
         }
 
         T minElement = head->data;
@@ -178,7 +178,6 @@ public:
     void print() const
     {
         Node *current = head.get();
-        Node *prev = nullptr;
 
         while (current)
         {

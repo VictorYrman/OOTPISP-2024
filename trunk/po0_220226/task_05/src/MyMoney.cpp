@@ -26,7 +26,7 @@ MyMoney MyMoney::operator+(const MyMoney &a) const
     return result;
 }
 
-MyMoney MyMoney::operator/(double val)
+MyMoney MyMoney::operator/(double val) const
 {
     int64_t totalCents = (dollars_ * 100 + cents_) / val;
     MyMoney result;

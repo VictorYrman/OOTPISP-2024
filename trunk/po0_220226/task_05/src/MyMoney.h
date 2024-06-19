@@ -14,7 +14,7 @@ public:
 	bool operator==(const MyMoney &a) const;
 	auto operator<=>(const MyMoney &a) const = default;
 	MyMoney operator+(const MyMoney &a) const;
-	MyMoney operator/(double val);
+	MyMoney operator/(double val) const;
 
 	friend std::ostream &operator<<(std::ostream &out, const MyMoney &a)
 	{
