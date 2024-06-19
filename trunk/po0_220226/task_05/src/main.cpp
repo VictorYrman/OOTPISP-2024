@@ -113,97 +113,80 @@ void q_sub_min_from_queue(std::queue<T> &q)
 
 int main()
 {
-    // TASK 1 //
-    // -----------------------------------------------//
-    std::vector<float> vec_of_floats = {1.0f, 2.0f, 4.0f, 3.3f};
+    std::vector new_vec_of_floats = { 1.0f, 2.0f, 4.0f, 3.3f };
+    pushAverageToBegin(new_vec_of_floats);
+    deleteByKey(new_vec_of_floats, 1.0f);
+    subtractMinFromVector(new_vec_of_floats);
 
-    push_average_to_begin(vec_of_floats);
-    delete_by_key(vec_of_floats, 1.0f);
-    sub_min_from_vector(vec_of_floats);
-
-    for (const auto &i : vec_of_floats)
+    for (const auto& i : new_vec_of_floats)
     {
         std::cout << i << " ";
     }
 
-    // -----------------------------------------------//
-
-    // TASK 2 //
-    // -----------------------------------------------//
     std::cout << std::endl;
 
-    std::vector<MyMoney> vec_of_mymoney = {MyMoney(1.66), MyMoney(4.51), MyMoney(0.4), MyMoney(6.53)};
+    std::vector<MyMoney> new_vec_of_mymoney = { MyMoney(1.66), MyMoney(4.51), MyMoney(0.4), MyMoney(6.53) };
 
-    push_average_to_begin(vec_of_mymoney);
-    delete_by_key(vec_of_mymoney, MyMoney(6.53));
-    sub_min_from_vector(vec_of_mymoney);
+    pushAverageToBegin(new_vec_of_mymoney);
+    deleteByKey(new_vec_of_mymoney, MyMoney(6.53));
+    subtractMinFromVector(new_vec_of_mymoney);
 
-    for (const auto &i : vec_of_mymoney)
+    for (const auto& i : new_vec_of_mymoney)
     {
         std::cout << i << " ";
     }
 
-    // -----------------------------------------------//
-
-    // TASK 3 //
-    // -----------------------------------------------//
+   
     std::cout << std::endl;
 
-    List<double> list_of_double;
-    list_of_double.push_back(1.9);
-    list_of_double.push_back(1.333);
-    list_of_double.push_back(2.53);
-    list_of_double.push_back(0.4);
-    list_of_double.push_back(5.42);
+    List<double> new_list_of_double;
+    new_list_of_double.pushBack(1.9);
+    new_list_of_double.pushBack(1.333);
+    new_list_of_double.pushBack(2.53);
+    new_list_of_double.pushBack(0.4);
+    new_list_of_double.pushBack(5.42);
 
-    list_of_double.findAverageAndAddToFront();
-    list_of_double.findAndRemove(2.53);
-    list_of_double.subtractMinFromAll();
+    new_list_of_double.findAverageAndAddToFront();
+    new_list_of_double.findAndRemove(2.53);
+    new_list_of_double.subtractMinFromAll();
 
-    list_of_double.print();
+    new_list_of_double.print();
 
-    // -----------------------------------------------//
-
-    // TASK 4 //
-    // -----------------------------------------------//
+    
     std::cout << std::endl;
-    std::queue<MyMoney> somePieceOfStack;
+    std::queue<MyMoney> new_piece_of_queue;
 
-    somePieceOfStack.push(MyMoney(1.66));
-    somePieceOfStack.push(MyMoney(4.51));
-    somePieceOfStack.push(MyMoney(0.4));
-    somePieceOfStack.push(MyMoney(6.53));
+    new_piece_of_queue.push(MyMoney(1.66));
+    new_piece_of_queue.push(MyMoney(4.51));
+    new_piece_of_queue.push(MyMoney(0.4));
+    new_piece_of_queue.push(MyMoney(6.53));
 
-    q_push_average_to_begin(somePieceOfStack);
-    q_delete_by_key(somePieceOfStack, MyMoney(6.53));
-    q_sub_min_from_queue(somePieceOfStack);
+    qPushAverageToBegin(new_piece_of_queue);
+    qDeleteByKey(new_piece_of_queue, MyMoney(6.53));
+    qSubtractMinFromQueue(new_piece_of_queue);
 
-    while (!somePieceOfStack.empty())
+    while (!new_piece_of_queue.empty())
     {
-        std::cout << somePieceOfStack.front() << " ";
-        somePieceOfStack.pop();
+        std::cout << new_piece_of_queue.front() << " ";
+        new_piece_of_queue.pop();
     }
 
-    // -----------------------------------------------//
-
-    // TASK 5 //
-    // -----------------------------------------------//
     std::cout << std::endl;
 
-    QList<float> ssetOfFloats;
-    ssetOfFloats.push_back(1.9f);
-    ssetOfFloats.push_back(1.333f);
-    ssetOfFloats.push_back(2.53f);
-    ssetOfFloats.push_back(11.0f);
-    ssetOfFloats.push_back(11.0f);
+    QList<float> new_set_of_floats;
+    new_set_of_floats.pushBack(1.9f);
+    new_set_of_floats.pushBack(1.333f);
+    new_set_of_floats.pushBack(2.53f);
+    new_set_of_floats.pushBack(11.0f);
+    new_set_of_floats.pushBack(11.0f);
 
-    ssetOfFloats.findAverageAndAddToFront();
-    ssetOfFloats.findAndRemove(11.0f);
-    ssetOfFloats.subtractMinFromAll();
+    new_set_of_floats.findAverageAndAddToFront();
+    new_set_of_floats.findAndRemove(11.0f);
+    new_set_of_floats.subtractMinFromAll();
 
-    while (!ssetOfFloats.empty())
+    while (!new_set_of_floats.empty())
     {
-        std::cout << ssetOfFloats.front() << " ";
-        ssetOfFloats.pop_front();
+        std::cout << new_set_of_floats.front() << " ";
+        new_set_of_floats.popFront();
     }
 }
