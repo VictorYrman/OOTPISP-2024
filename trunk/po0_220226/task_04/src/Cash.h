@@ -13,7 +13,7 @@ public:
     Cash& operator=(const Cash& a) = default;
     bool operator==(const Cash& a) const;
     
-    Cash Cash::operator+(const Cash& other)
+    friend Cash operator+(const Cash& other)
     {
         int64_t resultRubles = rubles + other.rubles;
         int32_t resultCopecks = copecks + other.copecks;
