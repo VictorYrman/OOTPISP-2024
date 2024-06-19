@@ -114,9 +114,9 @@ void q_sub_min_from_queue(std::queue<T> &q)
 int main()
 {
     std::vector new_vec_of_floats = { 1.0f, 2.0f, 4.0f, 3.3f };
-    pushAverageToBegin(new_vec_of_floats);
-    deleteByKey(new_vec_of_floats, 1.0f);
-    subtractMinFromVector(new_vec_of_floats);
+    push_average_to_begin(new_vec_of_floats);
+    delete_by_key(new_vec_of_floats, 1.0f);
+    sub_min_from_vector(new_vec_of_floats);
 
     for (const auto& i : new_vec_of_floats)
     {
@@ -127,9 +127,9 @@ int main()
 
     std::vector<MyMoney> new_vec_of_mymoney = { MyMoney(1.66), MyMoney(4.51), MyMoney(0.4), MyMoney(6.53) };
 
-    pushAverageToBegin(new_vec_of_mymoney);
-    deleteByKey(new_vec_of_mymoney, MyMoney(6.53));
-    subtractMinFromVector(new_vec_of_mymoney);
+    push_average_to_begin(new_vec_of_mymoney);
+    delete_by_key(new_vec_of_mymoney, MyMoney(6.53));
+    sub_min_from_vector(new_vec_of_mymoney);
 
     for (const auto& i : new_vec_of_mymoney)
     {
@@ -140,11 +140,11 @@ int main()
     std::cout << std::endl;
 
     List<double> new_list_of_double;
-    new_list_of_double.pushBack(1.9);
-    new_list_of_double.pushBack(1.333);
-    new_list_of_double.pushBack(2.53);
-    new_list_of_double.pushBack(0.4);
-    new_list_of_double.pushBack(5.42);
+    new_list_of_double.push_back(1.9);
+    new_list_of_double.push_back(1.333);
+    new_list_of_double.push_back(2.53);
+    new_list_of_double.push_back(0.4);
+    new_list_of_double.push_back(5.42);
 
     new_list_of_double.findAverageAndAddToFront();
     new_list_of_double.findAndRemove(2.53);
@@ -161,9 +161,9 @@ int main()
     new_piece_of_queue.push(MyMoney(0.4));
     new_piece_of_queue.push(MyMoney(6.53));
 
-    qPushAverageToBegin(new_piece_of_queue);
-    qDeleteByKey(new_piece_of_queue, MyMoney(6.53));
-    qSubtractMinFromQueue(new_piece_of_queue);
+    q_push_average_to_begin(new_piece_of_queue);
+    q_delete_by_key(new_piece_of_queue, MyMoney(6.53));
+    q_sub_min_from_queue(new_piece_of_queue);
 
     while (!new_piece_of_queue.empty())
     {
@@ -174,11 +174,11 @@ int main()
     std::cout << std::endl;
 
     QList<float> new_set_of_floats;
-    new_set_of_floats.pushBack(1.9f);
-    new_set_of_floats.pushBack(1.333f);
-    new_set_of_floats.pushBack(2.53f);
-    new_set_of_floats.pushBack(11.0f);
-    new_set_of_floats.pushBack(11.0f);
+    new_set_of_floats.push_back(1.9f);
+    new_set_of_floats.push_back(1.333f);
+    new_set_of_floats.push_back(2.53f);
+    new_set_of_floats.push_back(11.0f);
+    new_set_of_floats.push_back(11.0f);
 
     new_set_of_floats.findAverageAndAddToFront();
     new_set_of_floats.findAndRemove(11.0f);
@@ -187,6 +187,6 @@ int main()
     while (!new_set_of_floats.empty())
     {
         std::cout << new_set_of_floats.front() << " ";
-        new_set_of_floats.popFront();
+        new_set_of_floats.pop_front();
     }
 }
