@@ -81,7 +81,7 @@ public:
     {
         if (!head)
         {
-            return;
+            return nullptr;
         }
         return head->data;
     }
@@ -90,7 +90,7 @@ public:
     {
         if (!tail)
         {
-            return;
+            return nullptr;
         }
         return tail->data;
     }
