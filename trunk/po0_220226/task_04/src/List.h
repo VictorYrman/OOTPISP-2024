@@ -3,7 +3,6 @@
 #include <iostream>
 #include <memory>
 #include <vector>
-#include <algorithm>
 
 template <typename T>
 class List
@@ -31,7 +30,14 @@ public:
 
     bool Contains(const T& element) const
     {
-        return std::ranges::any_of(elements, [&](const auto& e) { return e == element; });
+        for (const auto& e : elements)
+        {
+            if (e == element)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     size_t Size() const
@@ -54,7 +60,7 @@ public:
         return static_cast<int>(Size());
     }
 
-    friend List<T> operator+(const List<T>& other) const
+    List<T> operator+(const List<T>& other) const
     {
         List<T> result;
         size_t maxSize = std::max(this->Size(), other.Size());

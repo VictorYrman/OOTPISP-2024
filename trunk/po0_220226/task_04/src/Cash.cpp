@@ -22,3 +22,18 @@ Cash Cash::operator+(const Cash& other) const
     }
     return Cash(static_cast<double>(resultRubles) + static_cast<double>(resultCopecks) / 100.0);
 }
+
+std::ostream& operator<<(std::ostream& out, const Cash& a)
+{
+    out << a.GetRubles() << "," << a.GetCopecks() << std::endl;
+    return out;
+}
+
+std::istream& operator>>(std::istream& in, Cash& a)
+{
+    std::cout << "Enter amount of rubles" << std::endl;
+    in >> a.rubles;
+    std::cout << "Enter amount of copecks" << std::endl;
+    in >> a.copecks;
+    return in;
+}

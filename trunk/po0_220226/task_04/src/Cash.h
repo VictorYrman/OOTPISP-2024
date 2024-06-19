@@ -14,20 +14,8 @@ public:
     bool operator==(const Cash& a) const;
     Cash operator+(const Cash& other) const;
 
-    friend std::ostream& operator<<(std::ostream& out, const Cash& a)
-    {
-        out << a.GetRubles() << "," << a.GetCopecks() << std::endl;
-        return out;
-    }
-
-    friend std::istream& operator>>(std::istream& in, Cash& a)
-    {
-        std::cout << "Enter amount of rubles" << std::endl;
-        in >> a.rubles;
-        std::cout << "Enter amount of copecks" << std::endl;
-        in >> a.copecks;
-        return in;
-    }
+    friend std::ostream& operator<<(std::ostream& out, const Cash& a);
+    friend std::istream& operator>>(std::istream& in, Cash& a);
 
     inline int32_t GetCopecks() const { return copecks; };
     inline int64_t GetRubles() const { return rubles; };
